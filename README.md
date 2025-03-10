@@ -1,2 +1,3 @@
-# python-project-cookiecutter
-Cookiecutter for library and CLI Python projects
+# Python project cookiecutter
+
+Welcome to my library and CLI Python project cookiecutter.
