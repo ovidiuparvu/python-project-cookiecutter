@@ -1,0 +1,13 @@
+{
+    "project_name": "python-project",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "package_name": "{{ cookiecutter.project_slug }}",
+    "description": "A Python project created with cookiecutter",
+    "author_name": "Ovidiu Parvu",
+    "author_email": "ovidiu.parvu@gmail.com",
+    "python_version": "3.12",
+    "min_python_version": "3.12",
+    "version": "0.1.0",
+    "create_cli": ["yes", "no"],
+    "open_source_license": ["MIT", "BSD", "Apache", "GPLv3", "Not open source"]
+}
