@@ -22,22 +22,36 @@ dependencies = [
 ]
 
 [tool.hatch.envs.default]
-dependencies = [
-    "mypy>=1.8.0",
-    "ruff>=0.1.11",
-    "pylint>=3.0.3",
-]
+dependencies = []
 
 [tool.hatch.envs.test]
 skip-install = true
 detached = true
 dependencies = [
-    "pytest>=8.0.0",
-    "pytest-cov>=4.1.0",
+    "pytest",
+    "pytest-cov",
 ]
 
+[tool.hatch.envs.lint]
+skip-install = true
+detached = true
+dependencies = [
+    "mypy",
+    "pylint",
+    "ruff",
+]
+
+[tool.hatch.envs.lint.scripts]
+all = [
+    "mypy .",
+    "pylint src tests",
+    "ruff check .",
+]
+style = "ruff check ."
+types = "mypy ."
+pylint = "pylint src tests"
+
 [tool.ruff]
-target-version = "py{{ cookiecutter.min_python_version.replace('.', '') }}"
 line-length = 120
 select = ["E", "F", "B", "I"]
 
