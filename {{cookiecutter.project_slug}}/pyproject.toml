@@ -42,18 +42,17 @@ dependencies = [
 ]
 
 [tool.hatch.envs.lint.scripts]
-all = [
-    "mypy .",
-    "pylint src tests",
+ruff = [
     "ruff check .",
     "ruff format --check .",
 ]
-style = [
-    "ruff check .",
-    "ruff format --check .",
-]
-types = "mypy ."
+mypy = "mypy ."
 pylint = "pylint src tests"
+all = [
+    "@ruff",
+    "@mypy",
+    "@pylint",
+]
 
 [tool.hatch.envs.fix]
 skip-install = true
@@ -63,7 +62,7 @@ dependencies = [
 ]
 
 [tool.hatch.envs.fix.scripts]
-style = [
+ruff = [
     "ruff check --fix .",
     "ruff format .",
 ]
