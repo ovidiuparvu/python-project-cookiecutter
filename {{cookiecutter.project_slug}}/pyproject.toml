@@ -46,10 +46,27 @@ all = [
     "mypy .",
     "pylint src tests",
     "ruff check .",
+    "ruff format --check .",
 ]
-style = "ruff check ."
+style = [
+    "ruff check .",
+    "ruff format --check .",
+]
 types = "mypy ."
 pylint = "pylint src tests"
+
+[tool.hatch.envs.fix]
+skip-install = true
+detached = true
+dependencies = [
+    "ruff>=0.1.11",
+]
+
+[tool.hatch.envs.fix.scripts]
+style = [
+    "ruff check --fix .",
+    "ruff format .",
+]
 
 [tool.ruff]
 line-length = 120
