@@ -19,8 +19,13 @@ The cookiecutter should use:
 Please create the following hatch environments:
 
 1. test: For running `pytest`.
+    - Skip package install and detached.
 2. lint: For running `ruff`, `mypy` and `pylint`.
     - By default run all tools but allow running tools individually as well.
+    - Skip package install and detached.
 3. fix: For auto-fixing issues using `ruff`.
+    - Skip package install and detached.
 4. upgrade_dependencies: For creating a requirements.txt file that freezes all dependencies of the project (including hashes) using `uv pip compile`.
+    - Dependency: uv.
+    - Skip package install and detached.
 5. docs: For creating docs using `mkdocs`.
